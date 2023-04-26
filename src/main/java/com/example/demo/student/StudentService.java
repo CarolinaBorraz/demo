@@ -16,7 +16,11 @@ public class StudentService implements StudentServiceInterface {
     }
 
     public List<Student> getStudents() {
-        return this.repository.findAll();
+        try {
+            return this.repository.findAll();
+        } catch(Exception e) {
+            return null;
+        }
     }
 
     public Student getStudentById(Long id) {
