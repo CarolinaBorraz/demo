@@ -18,7 +18,11 @@ public class StudentController {
 	StudentServiceInterface studentService;
 
 	public StudentController(StudentServiceInterface studentService) {
-		this.studentService = studentService;
+		try {
+			this.studentService = studentService;
+		} catch(Exception e) {
+
+		}
 	}
 
 	@GetMapping ("/getall")
